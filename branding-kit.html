@@ -1,0 +1,1365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TCG Arena — Branding Kit</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --green: #00ff88;
+  --green-dim: #00ff8833;
+  --green-glow: #00ff8866;
+  --gold: #ffd700;
+  --gold-dim: #ffd70033;
+  --crimson: #ff0040;
+  --bg: #0a0a0a;
+  --bg2: #111111;
+  --bg3: #1a1a1a;
+  --bg4: #222222;
+  --text: #e0e0e0;
+  --text-dim: #888888;
+  --blue: #4488ff;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Grid background */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: 
+    linear-gradient(rgba(0,255,136,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,255,136,0.06) 1px, transparent 1px);
+  background-size: 60px 60px;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Animated background */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: 
+    radial-gradient(ellipse at 20% 50%, #00ff8808 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, #ffd70005 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, #ff004005 0%, transparent 50%);
+  z-index: -2;
+  animation: bgShift 20s ease-in-out infinite alternate;
+}
+
+@keyframes bgShift {
+  0% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+.container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 100px 24px 80px;
+  position: relative;
+}
+
+.hero-badge {
+  display: inline-block;
+  padding: 6px 16px;
+  border: 1px solid var(--green-dim);
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--green);
+  letter-spacing: 0.5px;
+  margin-bottom: 24px;
+  background: var(--green-dim);
+  animation: fadeInUp 0.6s ease;
+}
+
+.hero h1 {
+  font-size: clamp(48px, 8vw, 80px);
+  font-weight: 900;
+  letter-spacing: -2px;
+  line-height: 1;
+  margin-bottom: 24px;
+  animation: fadeInUp 0.6s ease 0.1s both;
+}
+
+.hero h1 span { color: var(--green); }
+
+.hero-tagline {
+  font-size: clamp(18px, 2.5vw, 22px);
+  color: var(--text-dim);
+  max-width: 700px;
+  margin: 0 auto 40px;
+  font-weight: 300;
+  animation: fadeInUp 0.6s ease 0.2s both;
+}
+
+.hero-quote {
+  background: var(--bg2);
+  border: 1px solid var(--bg4);
+  border-left: 3px solid var(--green);
+  border-radius: 12px;
+  padding: 24px 32px;
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text);
+  text-align: left;
+  animation: fadeInUp 0.6s ease 0.3s both;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Sections */
+section { padding: 80px 0; }
+
+.section-label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-size: clamp(32px, 4vw, 44px);
+  font-weight: 800;
+  letter-spacing: -1px;
+  margin-bottom: 48px;
+}
+
+/* Stats Grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+.stat-card {
+  background: var(--bg2);
+  border: 1px solid var(--bg4);
+  border-radius: 16px;
+  padding: 24px;
+  text-align: center;
+  transition: border-color 0.3s, transform 0.3s;
+}
+
+.stat-card:hover {
+  border-color: var(--green-dim);
+  transform: translateY(-2px);
+}
+
+.stat-value {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--green);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.stat-label {
+  font-size: 13px;
+  color: var(--text-dim);
+  margin-top: 4px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Key Facts Table */
+.facts-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 32px 0;
+}
+
+.facts-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--bg3);
+  font-size: 15px;
+}
+
+.facts-table td:first-child {
+  color: var(--text-dim);
+  font-weight: 500;
+  width: 180px;
+  white-space: nowrap;
+}
+
+.facts-table td:last-child {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+}
+
+.facts-table a {
+  color: var(--green);
+  text-decoration: none;
+}
+
+.facts-table a:hover { text-decoration: underline; }
+
+/* Mechanics */
+.mechanics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.mechanic-card {
+  background: var(--bg2);
+  border: 1px solid var(--bg4);
+  border-radius: 16px;
+  padding: 32px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.3s, transform 0.3s;
+}
+
+.mechanic-card:hover {
+  border-color: var(--green-dim);
+  transform: translateY(-2px);
+}
+
+.mechanic-number {
+  font-size: 64px;
+  font-weight: 900;
+  color: var(--green);
+  opacity: 0.1;
+  position: absolute;
+  top: -8px;
+  right: 16px;
+  line-height: 1;
+}
+
+.mechanic-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.mechanic-card p {
+  color: var(--text-dim);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.mechanic-highlight {
+  color: var(--green);
+  font-weight: 600;
+}
+
+/* Featured Cards */
+.cards-showcase {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin: 48px 0;
+}
+
+@media (max-width: 768px) {
+  .cards-showcase { grid-template-columns: repeat(2, 1fr); }
+}
+
+.card-frame {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 2px solid var(--bg4);
+  transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  aspect-ratio: 3/4;
+}
+
+.card-frame:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 8px 32px rgba(0,255,136,0.15);
+}
+
+.card-frame:nth-child(1) { border-color: var(--blue); }
+.card-frame:nth-child(1):hover { box-shadow: 0 8px 32px rgba(68,136,255,0.2); }
+.card-frame:nth-child(2) { border-color: var(--crimson); }
+.card-frame:nth-child(2):hover { box-shadow: 0 8px 32px rgba(255,0,64,0.2); }
+.card-frame:nth-child(3) { border-color: var(--gold); }
+.card-frame:nth-child(3):hover { box-shadow: 0 8px 32px rgba(255,215,0,0.2); }
+.card-frame:nth-child(4) { border-color: var(--green); }
+.card-frame:nth-child(4):hover { box-shadow: 0 8px 32px rgba(0,255,136,0.2); }
+
+.card-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Rarity Table */
+.rarity-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 32px 0;
+}
+
+.rarity-table th {
+  text-align: left;
+  padding: 12px 16px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-dim);
+  border-bottom: 2px solid var(--bg4);
+}
+
+.rarity-table td {
+  padding: 16px;
+  border-bottom: 1px solid var(--bg3);
+  font-size: 15px;
+}
+
+.rarity-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.rarity-common { background: #888; }
+.rarity-uncommon { background: var(--green); }
+.rarity-rare { background: var(--blue); }
+.rarity-legendary { background: var(--gold); }
+.rarity-mythic { background: var(--crimson); animation: pulse 2s infinite; }
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255,0,64,0.4); }
+  50% { box-shadow: 0 0 8px 4px rgba(255,0,64,0.2); }
+}
+
+.rarity-table td:nth-child(3),
+.rarity-table td:nth-child(4) {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+}
+
+/* Agents */
+.agents-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+.agent-card {
+  background: var(--bg2);
+  border: 1px solid var(--bg4);
+  border-radius: 16px;
+  padding: 24px;
+  text-align: center;
+  transition: border-color 0.3s, transform 0.3s;
+}
+
+.agent-card:hover {
+  border-color: var(--green-dim);
+  transform: translateY(-2px);
+}
+
+.agent-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--green-dim);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 12px;
+  font-size: 20px;
+}
+
+.agent-card h4 {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.agent-card p {
+  font-size: 12px;
+  color: var(--text-dim);
+  line-height: 1.4;
+}
+
+/* Token Economics */
+.econ-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.econ-card {
+  background: var(--bg2);
+  border: 1px solid var(--bg4);
+  border-radius: 16px;
+  padding: 28px;
+  text-align: center;
+  transition: border-color 0.3s;
+}
+
+.econ-card:hover { border-color: var(--green-dim); }
+
+.econ-value {
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--green);
+  margin-bottom: 4px;
+}
+
+.econ-card:nth-child(2) .econ-value { color: var(--gold); }
+.econ-card:nth-child(4) .econ-value { color: var(--blue); }
+
+.econ-label {
+  font-size: 13px;
+  color: var(--text-dim);
+}
+
+/* Color Swatches */
+.swatches {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 16px;
+  margin: 32px 0;
+}
+
+.swatch {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--bg4);
+}
+
+.swatch-color {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swatch-info {
+  padding: 12px 16px;
+  background: var(--bg2);
+}
+
+.swatch-name {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.swatch-hex {
+  font-size: 12px;
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--text-dim);
+}
+
+/* Links */
+.links-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.link-card {
+  display: block;
+  background: var(--bg2);
+  border: 1px solid var(--bg4);
+  border-radius: 16px;
+  padding: 24px;
+  text-decoration: none;
+  color: var(--text);
+  transition: border-color 0.3s, transform 0.3s;
+}
+
+.link-card:hover {
+  border-color: var(--green);
+  transform: translateY(-2px);
+}
+
+.link-card h4 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.link-card p {
+  font-size: 13px;
+  color: var(--text-dim);
+}
+
+.link-card .arrow {
+  color: var(--green);
+  font-size: 18px;
+  float: right;
+  margin-top: -20px;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 60px 24px;
+  color: var(--text-dim);
+  font-size: 13px;
+  border-top: 1px solid var(--bg3);
+}
+
+.footer strong { color: var(--green); }
+
+/* Divider */
+.divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--bg4), transparent);
+  margin: 0;
+}
+
+/* Pack types */
+.packs-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.pack-card {
+  background: var(--bg3);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+}
+
+.pack-card h4 {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.pack-price {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--green);
+}
+
+.pack-desc {
+  font-size: 12px;
+  color: var(--text-dim);
+  margin-top: 4px;
+}
+
+/* Mini card grid */
+.mini-card {
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--bg4);
+  transition: transform 0.3s, border-color 0.3s;
+  position: relative;
+}
+
+.mini-card:hover {
+  transform: scale(1.05);
+  border-color: var(--green-dim);
+}
+
+.mini-card img {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  display: block;
+}
+
+.mini-card span {
+  display: block;
+  padding: 6px 8px;
+  font-size: 11px;
+  font-weight: 600;
+  text-align: center;
+  background: var(--bg2);
+  color: var(--text-dim);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Screenshots */
+.screenshot-grid { margin: 32px 0; }
+
+.screenshot-card {
+  background: var(--bg2);
+  border: 1px solid var(--bg4);
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+
+.screenshot-label {
+  padding: 12px 20px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--green);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 1px solid var(--bg4);
+}
+
+.screenshot-frame {
+  background: var(--bg);
+}
+
+.screenshot-frame img {
+  width: 100%;
+  display: block;
+}
+
+.screenshot-desc {
+  padding: 16px 20px;
+  font-size: 14px;
+  color: var(--text-dim);
+  line-height: 1.6;
+  border-top: 1px solid var(--bg4);
+}
+
+.screenshot-desc strong { color: var(--text); }
+
+/* Components Grid */
+.components-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.component-card {
+  background: var(--bg2);
+  border: 1px solid var(--bg4);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: border-color 0.3s, transform 0.3s;
+}
+
+.component-card:hover {
+  border-color: var(--green-dim);
+  transform: translateY(-2px);
+}
+
+.component-header {
+  padding: 24px;
+  text-align: center;
+}
+
+.component-info {
+  padding: 20px;
+  border-top: 1px solid var(--bg4);
+}
+
+.component-info h4 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.component-info p {
+  font-size: 13px;
+  color: var(--text-dim);
+  line-height: 1.5;
+}
+
+@media (max-width: 600px) {
+  .packs-row { grid-template-columns: 1fr; }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .agents-grid { grid-template-columns: repeat(2, 1fr); }
+}
+</style>
+</head>
+<body>
+
+<!-- Hero -->
+<div class="hero">
+  <div class="hero-badge">⚡ BRANDING KIT — FEBRUARY 2026</div>
+  <h1><span>TCG</span> ARENA</h1>
+  <p class="hero-tagline">The deflationary AI-native NFT card game on Monad. Open packs, collect on-chain cards, battle AI agents, earn weekly rewards. 50% of every purchase burned forever.</p>
+  <div class="hero-quote">
+    <strong>Elevator Pitch</strong> — TCG Arena is a trading card game built entirely on Monad where every card is an NFT and every pack purchase burns tokens. Five AI agents judge community card designs, shape the meta, and serve as battle opponents. There's a 500M TCG reward pool paying out weekly to card holders — rarer cards earn more. It's deflationary by design: the more people play, the scarcer the token gets, and early collectors earn the highest yields.
+  </div>
+</div>
+
+<div class="container">
+
+<!-- Key Stats -->
+<section>
+  <div class="section-label">At a Glance</div>
+  <h2 class="section-title">Key Numbers</h2>
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="stat-value">1B</div>
+      <div class="stat-label">Total Supply</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">85+</div>
+      <div class="stat-label">Token Holders</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">787+</div>
+      <div class="stat-label">NFTs Minted</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">500M</div>
+      <div class="stat-label">Reward Pool</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">50%</div>
+      <div class="stat-label">Burn Per Pack</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">5</div>
+      <div class="stat-label">AI Agents</div>
+    </div>
+  </div>
+
+  <table class="facts-table">
+    <tr><td>Website</td><td><a href="https://tcgarena.fun">tcgarena.fun</a></td></tr>
+    <tr><td>Chain</td><td>Monad Mainnet</td></tr>
+    <tr><td>Token</td><td><a href="https://monadscan.com/token/0x94CF69B5b13E621cB11f5153724AFb58c7337777">$TCG — 0x94CF6...7777</a></td></tr>
+    <tr><td>NFT Contract</td><td><a href="https://monadscan.com/address/0x1931c88707Eb36e0EF3e235589724Ce7faEa0889">0x1931c...0889</a></td></tr>
+    <tr><td>DEX</td><td><a href="https://nad.fun">nad.fun</a></td></tr>
+  </table>
+</section>
+
+<div class="divider"></div>
+
+<!-- Website Screenshots -->
+<section>
+  <div class="section-label">Product</div>
+  <h2 class="section-title">Website & Components</h2>
+  <p style="color:var(--text-dim);margin-bottom:32px;">Live at <a href="https://tcgarena.fun" style="color:var(--green);">tcgarena.fun</a> — dark UI with particle effects, floating card animations, and crypto-native aesthetic.</p>
+  
+  <div class="screenshot-grid">
+    <div class="screenshot-card">
+      <div class="screenshot-label">Homepage Hero</div>
+      <div class="screenshot-frame">
+        <img src="https://tcgarena.fun/api/og" alt="TCG Arena Homepage" loading="lazy" onerror="this.parentElement.innerHTML='<div style=\'padding:60px;text-align:center;color:var(--text-dim)\'>Visit <a href=\'https://tcgarena.fun\' style=\'color:var(--green)\'>tcgarena.fun</a></div>'">
+      </div>
+      <div class="screenshot-desc">
+        <strong>Hero Section:</strong> Bold typography, floating card stack animation, neon green CTAs. Features the core value prop: "Open Packs. 50% Burns. Holders Get Paid."
+      </div>
+    </div>
+  </div>
+
+  <h3 style="font-size:20px;font-weight:700;margin:48px 0 24px;">UI Components</h3>
+  <div class="components-grid">
+    <div class="component-card">
+      <div class="component-header" style="background:linear-gradient(135deg, #1a3a1a, #0a1a0a);">
+        <div style="font-size:32px;margin-bottom:8px;">🎴</div>
+      </div>
+      <div class="component-info">
+        <h4>Card System</h4>
+        <p>PSA-graded NFT cards with rarity-coded borders. Glow effects scale with rarity — commons are plain, legendaries pulse gold, mythics shimmer crimson.</p>
+      </div>
+    </div>
+    <div class="component-card">
+      <div class="component-header" style="background:linear-gradient(135deg, #1a1a3a, #0a0a1a);">
+        <div style="font-size:32px;margin-bottom:8px;">📦</div>
+      </div>
+      <div class="component-info">
+        <h4>Pack Opening</h4>
+        <p>Three pack tiers with gradient cards (blue/purple/pink). Shake animation on purchase, card reveal sequence with rarity celebration effects.</p>
+      </div>
+    </div>
+    <div class="component-card">
+      <div class="component-header" style="background:linear-gradient(135deg, #3a1a1a, #1a0a0a);">
+        <div style="font-size:32px;margin-bottom:8px;">🏟️</div>
+      </div>
+      <div class="component-info">
+        <h4>Arena & Voting</h4>
+        <p>Card grid with AI agent voting panel. Real-time proposal system — agents vote to add, modify, or add lore to cards. Round timer countdown.</p>
+      </div>
+    </div>
+    <div class="component-card">
+      <div class="component-header" style="background:linear-gradient(135deg, #3a3a0a, #1a1a0a);">
+        <div style="font-size:32px;margin-bottom:8px;">🏆</div>
+      </div>
+      <div class="component-info">
+        <h4>Leaderboard</h4>
+        <p>Collection rarity scoring. Shows collectors, cards pulled, legendaries found. Medal rankings with best pull highlights and PSA grades.</p>
+      </div>
+    </div>
+    <div class="component-card">
+      <div class="component-header" style="background:linear-gradient(135deg, #0a3a2a, #0a1a1a);">
+        <div style="font-size:32px;margin-bottom:8px;">💰</div>
+      </div>
+      <div class="component-info">
+        <h4>Staking & Rewards</h4>
+        <p>500M TCG reward pool dashboard. Shows pool balance, weekly distribution rate, user yield estimates, and card-by-card earnings breakdown.</p>
+      </div>
+    </div>
+    <div class="component-card">
+      <div class="component-header" style="background:linear-gradient(135deg, #2a0a3a, #1a0a1a);">
+        <div style="font-size:32px;margin-bottom:8px;">⚡</div>
+      </div>
+      <div class="component-info">
+        <h4>Live Activity Feed</h4>
+        <p>Floating widget showing real-time burns, NFT mints, and pack opens. Creates FOMO and social proof as players interact with the game.</p>
+      </div>
+    </div>
+  </div>
+
+  <h3 style="font-size:20px;font-weight:700;margin:48px 0 24px;">Navigation & Layout</h3>
+  <div style="background:var(--bg2);border:1px solid var(--bg4);border-radius:16px;padding:24px;margin-bottom:16px;">
+    <div style="display:flex;align-items:center;gap:24px;flex-wrap:wrap;margin-bottom:16px;">
+      <span style="font-weight:800;font-size:16px;">✕ TCG ARENA</span>
+      <span style="color:var(--text-dim);font-size:14px;">Play</span>
+      <span style="color:var(--text-dim);font-size:14px;">Packs</span>
+      <span style="color:var(--text-dim);font-size:14px;">Staking</span>
+      <span style="color:var(--text-dim);font-size:14px;">Collection</span>
+      <span style="color:var(--text-dim);font-size:14px;">Leaderboard</span>
+      <span style="color:var(--text-dim);font-size:14px;">Arena</span>
+      <span style="color:var(--text-dim);font-size:14px;">Agents</span>
+      <span style="color:var(--text-dim);font-size:14px;">Decks</span>
+      <span style="color:var(--text-dim);font-size:14px;">Forge</span>
+      <span style="color:var(--text-dim);font-size:14px;">Submit</span>
+      <span style="border:1px solid var(--green);color:var(--green);padding:4px 12px;border-radius:100px;font-size:12px;">Season 01</span>
+      <span style="border:1px solid var(--bg4);padding:6px 16px;border-radius:8px;font-size:13px;">Connect Wallet</span>
+    </div>
+    <p style="color:var(--text-dim);font-size:13px;">Full navigation bar with 11 sections, season indicator, and wallet connect. Token banner at top announces $TCG contract address.</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- Featured Cards -->
+<section>
+  <div class="section-label">Collection</div>
+  <h2 class="section-title">Featured Cards</h2>
+  <div class="cards-showcase">
+    <div class="card-frame"><img src="https://tcgarena.fun/cards/rugpull-dragon.jpg" alt="Rugpull Dragon" loading="lazy"></div>
+    <div class="card-frame"><img src="https://tcgarena.fun/cards/nadzilla.jpg" alt="Nadzilla" loading="lazy"></div>
+    <div class="card-frame"><img src="https://tcgarena.fun/cards/whale.jpg" alt="Whale" loading="lazy"></div>
+    <div class="card-frame"><img src="https://tcgarena.fun/cards/diamond-hands-golem.jpg" alt="Diamond Hands Golem" loading="lazy"></div>
+  </div>
+  <p style="text-align:center;color:var(--text-dim);font-size:14px;">Original crypto-creature artwork — Rugpull Dragon · Nadzilla (Mythic) · Whale · Diamond Hands Golem</p>
+  
+  <h3 style="font-size:20px;font-weight:700;margin:48px 0 24px;">Full Card Art Library</h3>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:12px;">
+    <div class="mini-card"><img src="https://tcgarena.fun/cards/nadzilla.jpg" alt="Nadzilla"><span>Nadzilla</span></div>
+    <div class="mini-card"><img src="https://tcgarena.fun/cards/rugpull-dragon.jpg" alt="Rugpull Dragon"><span>Rugpull Dragon</span></div>
+    <div class="mini-card"><img src="https://tcgarena.fun/cards/whale.jpg" alt="Whale"><span>Whale</span></div>
+    <div class="mini-card"><img src="https://tcgarena.fun/cards/diamond-hands-golem.jpg" alt="Diamond Hands Golem"><span>Diamond Hands</span></div>
+    <div class="mini-card"><img src="https://tcgarena.fun/cards/frozen-liquidity.jpg" alt="Frozen Liquidity"><span>Frozen Liquidity</span></div>
+    <div class="mini-card"><img src="https://tcgarena.fun/cards/shard-wyrm.jpg" alt="Shard Wyrm"><span>Shard Wyrm</span></div>
+    <div class="mini-card"><img src="https://tcgarena.fun/cards/the-deployer.jpg" alt="The Deployer"><span>The Deployer</span></div>
+    <div class="mini-card"><img src="https://tcgarena.fun/cards/sandwich-bot.jpg" alt="Sandwich Bot"><span>Sandwich Bot</span></div>
+    <div class="mini-card"><img src="https://tcgarena.fun/cards/dead-cat-bounce.jpg" alt="Dead Cat Bounce"><span>Dead Cat Bounce</span></div>
+    <div class="mini-card"><img src="https://tcgarena.fun/cards/octoracle.jpg" alt="Octoracle"><span>Octoracle</span></div>
+    <div class="mini-card"><img src="https://tcgarena.fun/cards/phantom-finalizer.jpg" alt="Phantom Finalizer"><span>Phantom Finalizer</span></div>
+    <div class="mini-card"><img src="https://tcgarena.fun/cards/the-liquidator.jpg" alt="The Liquidator"><span>The Liquidator</span></div>
+    <div class="mini-card"><img src="https://tcgarena.fun/cards/seed-phrase-treant.jpg" alt="Seed Phrase Treant"><span>Seed Treant</span></div>
+    <div class="mini-card"><img src="https://tcgarena.fun/cards/block-bunny.jpg" alt="Block Bunny"><span>Block Bunny</span></div>
+    <div class="mini-card"><img src="https://tcgarena.fun/cards/the-devnet-horror.jpg" alt="The Devnet Horror"><span>Devnet Horror</span></div>
+    <div class="mini-card"><img src="https://tcgarena.fun/cards/gas-guzzler.jpg" alt="Gas Guzzler"><span>Gas Guzzler</span></div>
+    <div class="mini-card"><img src="https://tcgarena.fun/cards/redcandle-witch.jpg" alt="Redcandle Witch"><span>Redcandle Witch</span></div>
+    <div class="mini-card"><img src="https://tcgarena.fun/cards/rug-walker.jpg" alt="Rug Walker"><span>Rug Walker</span></div>
+    <div class="mini-card"><img src="https://tcgarena.fun/cards/mempool-lurker.jpg" alt="Mempool Lurker"><span>Mempool Lurker</span></div>
+    <div class="mini-card"><img src="https://tcgarena.fun/cards/blob-validator.jpg" alt="Blob Validator"><span>Blob Validator</span></div>
+    <div class="mini-card"><img src="https://tcgarena.fun/cards/gremlin-mev.jpg" alt="Gremlin MEV"><span>Gremlin MEV</span></div>
+    <div class="mini-card"><img src="https://tcgarena.fun/cards/bft-crab.jpg" alt="BFT Crab"><span>BFT Crab</span></div>
+    <div class="mini-card"><img src="https://tcgarena.fun/cards/ser-greencandle.jpg" alt="Ser Greencandle"><span>Ser Greencandle</span></div>
+    <div class="mini-card"><img src="https://tcgarena.fun/cards/monadium.jpg" alt="Monadium"><span>Monadium</span></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- Core Mechanics -->
+<section>
+  <div class="section-label">How It Works</div>
+  <h2 class="section-title">Core Mechanics</h2>
+  <div class="mechanics-grid">
+    <div class="mechanic-card">
+      <div class="mechanic-number">1</div>
+      <h3>Buy $TCG</h3>
+      <p>Purchase TCG tokens on <span class="mechanic-highlight">nad.fun DEX</span>. This is your in-game currency for everything — packs, crafting, and trading.</p>
+    </div>
+    <div class="mechanic-card">
+      <div class="mechanic-number">2</div>
+      <h3>Open Packs</h3>
+      <p>Spend TCG to open card packs. Every card pulled is <span class="mechanic-highlight">minted as an on-chain ERC-721 NFT</span> with PSA-style rarity grading.</p>
+    </div>
+    <div class="mechanic-card">
+      <div class="mechanic-number">3</div>
+      <h3>Burn & Earn</h3>
+      <p><span class="mechanic-highlight">50% of every purchase is burned</span> forever. The other 50% funds the reward pool — distributed weekly to card holders.</p>
+    </div>
+    <div class="mechanic-card">
+      <div class="mechanic-number">4</div>
+      <h3>Build & Battle</h3>
+      <p>Construct decks from your NFT collection and battle <span class="mechanic-highlight">AI opponents in the Arena</span>. ELO-ranked matches with unique agent personalities.</p>
+    </div>
+  </div>
+
+  <div class="packs-row" style="margin-top:40px;">
+    <div class="pack-card">
+      <h4>Standard Pack</h4>
+      <div class="pack-price">5,000 TCG</div>
+      <div class="pack-desc">5 cards</div>
+    </div>
+    <div class="pack-card">
+      <h4>Monad Pack</h4>
+      <div class="pack-price">10,000 TCG</div>
+      <div class="pack-desc">3 cards · better odds</div>
+    </div>
+    <div class="pack-card">
+      <h4>Premium Pack</h4>
+      <div class="pack-price">15,000 TCG</div>
+      <div class="pack-desc">5 cards · highest rarity</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- Card Rarities -->
+<section>
+  <div class="section-label">Rarity System</div>
+  <h2 class="section-title">Card Rarities</h2>
+  <table class="rarity-table">
+    <thead>
+      <tr><th>Rarity</th><th>Supply Cap</th><th>Pull Rate</th><th>Reward Weight</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="rarity-dot rarity-common"></span>Common</td>
+        <td>1B</td><td>~80%</td><td>1x</td>
+      </tr>
+      <tr>
+        <td><span class="rarity-dot rarity-uncommon"></span>Uncommon</td>
+        <td>500M</td><td>~15%</td><td>1.5x</td>
+      </tr>
+      <tr>
+        <td><span class="rarity-dot rarity-rare"></span>Rare</td>
+        <td>100M</td><td>~4.5%</td><td>3x</td>
+      </tr>
+      <tr>
+        <td><span class="rarity-dot rarity-legendary"></span>Legendary</td>
+        <td>10M</td><td>~0.49%</td><td>5x</td>
+      </tr>
+      <tr>
+        <td><span class="rarity-dot rarity-mythic"></span>Mythic</td>
+        <td>1 (Nadzilla)</td><td>Unpullable</td><td>10x</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<div class="divider"></div>
+
+<!-- AI Agents -->
+<section>
+  <div class="section-label">AI-Powered</div>
+  <h2 class="section-title">AI Judges</h2>
+  <p style="color:var(--text-dim);margin-bottom:32px;max-width:600px;">Five AI agents evaluate and vote on community-submitted card designs each season. Winning designs get tokenized and added to the game.</p>
+  <div class="agents-grid">
+    <div class="agent-card">
+      <div class="agent-icon">🎨</div>
+      <h4>ArtCritic</h4>
+      <p>Visual design & composition</p>
+    </div>
+    <div class="agent-card">
+      <div class="agent-icon">⚔️</div>
+      <h4>MetaGamer</h4>
+      <p>Game balance & card mechanics</p>
+    </div>
+    <div class="agent-card">
+      <div class="agent-icon">📖</div>
+      <h4>LoreMaster</h4>
+      <p>Narrative, lore & flavor text</p>
+    </div>
+    <div class="agent-card">
+      <div class="agent-icon">📈</div>
+      <h4>DegTrader</h4>
+      <p>Meme value & community appeal</p>
+    </div>
+    <div class="agent-card">
+      <div class="agent-icon">💎</div>
+      <h4>DesignSage</h4>
+      <p>Card design & rarity balance</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- Token Economics -->
+<section>
+  <div class="section-label">Tokenomics</div>
+  <h2 class="section-title">Token Economics</h2>
+  <div class="econ-grid">
+    <div class="econ-card">
+      <div class="econ-value">50%</div>
+      <div class="econ-label">Burned per pack purchase</div>
+    </div>
+    <div class="econ-card">
+      <div class="econ-value">50%</div>
+      <div class="econ-label">To reward pool</div>
+    </div>
+    <div class="econ-card">
+      <div class="econ-value">10%</div>
+      <div class="econ-label">Weekly pool distribution</div>
+    </div>
+    <div class="econ-card">
+      <div class="econ-value">3x</div>
+      <div class="econ-label">Max HOLD boost</div>
+    </div>
+  </div>
+  <p style="color:var(--text-dim);margin-top:24px;font-size:14px;text-align:center;">Pack prices escalate over time — early buyers get the best rates. The more people play, the scarcer the token gets.</p>
+</section>
+
+<div class="divider"></div>
+
+<!-- Brand Identity -->
+<section>
+  <div class="section-label">Visual Identity</div>
+  <h2 class="section-title">Brand Colors</h2>
+  <div class="swatches">
+    <div class="swatch">
+      <div class="swatch-color" style="background:#00ff88;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Primary Green</div>
+        <div class="swatch-hex">#00ff88</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#0a0a0a;border-bottom:1px solid #333;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Background</div>
+        <div class="swatch-hex">#0a0a0a</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#ffd700;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Gold Accent</div>
+        <div class="swatch-hex">#ffd700</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#ff0040;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Mythic Crimson</div>
+        <div class="swatch-hex">#ff0040</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#4488ff;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Rare Blue</div>
+        <div class="swatch-hex">#4488ff</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#111111;border-bottom:1px solid #333;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Surface</div>
+        <div class="swatch-hex">#111111</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:40px;">
+    <h3 style="font-size:18px;font-weight:700;margin-bottom:16px;">Visual Style</h3>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;">
+      <div style="background:var(--bg2);border:1px solid var(--bg4);border-radius:12px;padding:20px;">
+        <div style="font-size:14px;font-weight:600;margin-bottom:6px;">Dark UI</div>
+        <div style="font-size:13px;color:var(--text-dim);">Particle effects and floating card animations on deep black backgrounds</div>
+      </div>
+      <div style="background:var(--bg2);border:1px solid var(--bg4);border-radius:12px;padding:20px;">
+        <div style="font-size:14px;font-weight:600;margin-bottom:6px;">Crypto-Native</div>
+        <div style="font-size:13px;color:var(--text-dim);">Trading terminal meets card game. Monospace data, neon accents.</div>
+      </div>
+      <div style="background:var(--bg2);border:1px solid var(--bg4);border-radius:12px;padding:20px;">
+        <div style="font-size:14px;font-weight:600;margin-bottom:6px;">Tone</div>
+        <div style="font-size:13px;color:var(--text-dim);">Degen-friendly but polished. Crypto humor without the cringe.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- Tech -->
+<section>
+  <div class="section-label">Infrastructure</div>
+  <h2 class="section-title">Tech Stack</h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;">
+    <div style="background:var(--bg2);border:1px solid var(--bg4);border-radius:12px;padding:20px;">
+      <div style="font-size:13px;color:var(--text-dim);margin-bottom:4px;">Blockchain</div>
+      <div style="font-size:16px;font-weight:600;">Monad</div>
+    </div>
+    <div style="background:var(--bg2);border:1px solid var(--bg4);border-radius:12px;padding:20px;">
+      <div style="font-size:13px;color:var(--text-dim);margin-bottom:4px;">NFT Standard</div>
+      <div style="font-size:16px;font-weight:600;">ERC-721</div>
+    </div>
+    <div style="background:var(--bg2);border:1px solid var(--bg4);border-radius:12px;padding:20px;">
+      <div style="font-size:13px;color:var(--text-dim);margin-bottom:4px;">DEX</div>
+      <div style="font-size:16px;font-weight:600;">nad.fun</div>
+    </div>
+    <div style="background:var(--bg2);border:1px solid var(--bg4);border-radius:12px;padding:20px;">
+      <div style="font-size:13px;color:var(--text-dim);margin-bottom:4px;">Frontend</div>
+      <div style="font-size:16px;font-weight:600;">Next.js + Vercel</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- Links -->
+<section>
+  <div class="section-label">Resources</div>
+  <h2 class="section-title">Links</h2>
+  <div class="links-grid">
+    <a href="https://tcgarena.fun" target="_blank" class="link-card">
+      <h4>Website</h4>
+      <p>tcgarena.fun</p>
+      <div class="arrow">→</div>
+    </a>
+    <a href="https://nad.fun" target="_blank" class="link-card">
+      <h4>Buy $TCG</h4>
+      <p>nad.fun DEX</p>
+      <div class="arrow">→</div>
+    </a>
+    <a href="https://monadscan.com/token/0x94CF69B5b13E621cB11f5153724AFb58c7337777" target="_blank" class="link-card">
+      <h4>Token Contract</h4>
+      <p>View on MonadScan</p>
+      <div class="arrow">→</div>
+    </a>
+    <a href="https://monadscan.com/address/0x1931c88707Eb36e0EF3e235589724Ce7faEa0889" target="_blank" class="link-card">
+      <h4>NFT Contract</h4>
+      <p>View on MonadScan</p>
+      <div class="arrow">→</div>
+    </a>
+  </div>
+</section>
+
+<!-- SOCIAL MEDIA GRAPHICS SECTION -->
+<section class="section" id="social-graphics">
+  <h2 class="section-title">📱 Social Media Graphics</h2>
+  <p style="color:#999; margin-bottom:32px; text-align:center;">Screenshot-ready components for Twitter/X posts. Each card is sized for optimal tweet engagement (1200×675 ratio).</p>
+
+  <!-- Graphic 1: Hero Announcement -->
+  <h3 style="color:#00ff88; margin-bottom:16px;">1. Hero Announcement Card</h3>
+  <div style="width:100%; max-width:600px; margin:0 auto 48px; aspect-ratio:1200/675; background:linear-gradient(135deg, #0a0a0a 0%, #111 40%, #0d1a12 100%); border:2px solid #00ff88; border-radius:16px; padding:40px; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; position:relative; overflow:hidden;">
+    <div style="position:absolute; top:-50px; right:-50px; width:200px; height:200px; background:radial-gradient(circle, rgba(0,255,136,0.15) 0%, transparent 70%);"></div>
+    <div style="position:absolute; bottom:-50px; left:-50px; width:200px; height:200px; background:radial-gradient(circle, rgba(255,215,0,0.1) 0%, transparent 70%);"></div>
+    <div style="font-size:48px; margin-bottom:12px;">⚔️</div>
+    <h2 style="font-size:32px; color:#fff; margin:0 0 8px; font-family:'Space Grotesk',sans-serif; letter-spacing:-1px;">TCG Arena</h2>
+    <p style="color:#00ff88; font-size:16px; margin:0 0 16px; font-weight:600;">The First Deflationary AI Card Game on Monad</p>
+    <p style="color:#888; font-size:13px; margin:0;">🃏 787+ NFTs Minted · 🔥 50% Burn · 💰 500M Reward Pool</p>
+    <p style="color:#ffd700; font-size:14px; margin:12px 0 0; font-weight:600;">tcgarena.fun</p>
+  </div>
+
+  <!-- Graphic 2: Stats Card -->
+  <h3 style="color:#00ff88; margin-bottom:16px;">2. Stats / Metrics Card</h3>
+  <div style="width:100%; max-width:600px; margin:0 auto 48px; aspect-ratio:1200/675; background:#0a0a0a; border:2px solid #222; border-radius:16px; padding:40px; display:flex; flex-direction:column; justify-content:center; position:relative; overflow:hidden;">
+    <div style="position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg, #00ff88, #ffd700, #ff0040);"></div>
+    <h3 style="color:#fff; font-size:22px; margin:0 0 24px; font-family:'Space Grotesk',sans-serif;">TCG Arena — By The Numbers</h3>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+      <div style="background:#111; border-radius:12px; padding:20px; text-align:center;">
+        <div style="font-size:28px; color:#00ff88; font-weight:700;">787+</div>
+        <div style="color:#888; font-size:12px; margin-top:4px;">NFTs Minted</div>
+      </div>
+      <div style="background:#111; border-radius:12px; padding:20px; text-align:center;">
+        <div style="font-size:28px; color:#ffd700; font-weight:700;">85+</div>
+        <div style="color:#888; font-size:12px; margin-top:4px;">Holders</div>
+      </div>
+      <div style="background:#111; border-radius:12px; padding:20px; text-align:center;">
+        <div style="font-size:28px; color:#ff0040; font-weight:700;">50%</div>
+        <div style="color:#888; font-size:12px; margin-top:4px;">Burn Rate</div>
+      </div>
+      <div style="background:#111; border-radius:12px; padding:20px; text-align:center;">
+        <div style="font-size:28px; color:#a855f7; font-weight:700;">500M</div>
+        <div style="color:#888; font-size:12px; margin-top:4px;">Reward Pool</div>
+      </div>
+    </div>
+    <p style="color:#555; font-size:11px; margin:16px 0 0; text-align:right;">tcgarena.fun · Built on Monad</p>
+  </div>
+
+  <!-- Graphic 3: Card Showcase -->
+  <h3 style="color:#00ff88; margin-bottom:16px;">3. Card Showcase Banner</h3>
+  <div style="width:100%; max-width:600px; margin:0 auto 48px; aspect-ratio:1200/675; background:linear-gradient(180deg, #0a0a0a 0%, #0d0d1a 100%); border:2px solid #222; border-radius:16px; padding:32px; display:flex; flex-direction:column; justify-content:center; align-items:center; position:relative; overflow:hidden;">
+    <h3 style="color:#fff; font-size:20px; margin:0 0 20px; font-family:'Space Grotesk',sans-serif; text-align:center;">Collect. Battle. Earn.</h3>
+    <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+      <div style="width:100px; height:140px; border-radius:8px; overflow:hidden; border:2px solid #ff0040; box-shadow:0 0 20px rgba(255,0,64,0.3); transform:rotate(-5deg);">
+        <img src="https://tcgarena.fun/cards/rugpull-dragon.jpg" alt="Rugpull Dragon" style="width:100%; height:100%; object-fit:cover;">
+      </div>
+      <div style="width:100px; height:140px; border-radius:8px; overflow:hidden; border:2px solid #ffd700; box-shadow:0 0 20px rgba(255,215,0,0.3); transform:rotate(0deg) scale(1.05);">
+        <img src="https://tcgarena.fun/cards/nadzilla.jpg" alt="Nadzilla" style="width:100%; height:100%; object-fit:cover;">
+      </div>
+      <div style="width:100px; height:140px; border-radius:8px; overflow:hidden; border:2px solid #a855f7; box-shadow:0 0 20px rgba(168,85,247,0.3); transform:rotate(5deg);">
+        <img src="https://tcgarena.fun/cards/diamond-hands-golem.jpg" alt="Diamond Hands Golem" style="width:100%; height:100%; object-fit:cover;">
+      </div>
+      <div style="width:100px; height:140px; border-radius:8px; overflow:hidden; border:2px solid #00ff88; box-shadow:0 0 20px rgba(0,255,136,0.3); transform:rotate(-3deg);">
+        <img src="https://tcgarena.fun/cards/whale.jpg" alt="Whale" style="width:100%; height:100%; object-fit:cover;">
+      </div>
+    </div>
+    <p style="color:#00ff88; font-size:14px; margin:20px 0 0; font-weight:600;">Every card is an NFT · Every pack burns $TCG</p>
+    <p style="color:#666; font-size:11px; margin:6px 0 0;">tcgarena.fun</p>
+  </div>
+
+  <!-- Graphic 4: How It Works -->
+  <h3 style="color:#00ff88; margin-bottom:16px;">4. How It Works (Explainer)</h3>
+  <div style="width:100%; max-width:600px; margin:0 auto 48px; aspect-ratio:1200/675; background:#0a0a0a; border:2px solid #222; border-radius:16px; padding:36px; display:flex; flex-direction:column; justify-content:center; position:relative; overflow:hidden;">
+    <h3 style="color:#fff; font-size:22px; margin:0 0 24px; font-family:'Space Grotesk',sans-serif; text-align:center;">How TCG Arena Works</h3>
+    <div style="display:flex; align-items:center; justify-content:center; gap:8px; flex-wrap:wrap;">
+      <div style="background:#111; border-radius:12px; padding:16px 12px; text-align:center; width:110px;">
+        <div style="font-size:24px;">💰</div>
+        <div style="color:#00ff88; font-size:11px; font-weight:600; margin-top:6px;">Buy $TCG</div>
+        <div style="color:#666; font-size:10px; margin-top:2px;">on nad.fun</div>
+      </div>
+      <div style="color:#333; font-size:20px;">→</div>
+      <div style="background:#111; border-radius:12px; padding:16px 12px; text-align:center; width:110px;">
+        <div style="font-size:24px;">🃏</div>
+        <div style="color:#ffd700; font-size:11px; font-weight:600; margin-top:6px;">Open Packs</div>
+        <div style="color:#666; font-size:10px; margin-top:2px;">Mint NFT cards</div>
+      </div>
+      <div style="color:#333; font-size:20px;">→</div>
+      <div style="background:#111; border-radius:12px; padding:16px 12px; text-align:center; width:110px;">
+        <div style="font-size:24px;">🔥</div>
+        <div style="color:#ff0040; font-size:11px; font-weight:600; margin-top:6px;">50% Burned</div>
+        <div style="color:#666; font-size:10px; margin-top:2px;">Forever</div>
+      </div>
+      <div style="color:#333; font-size:20px;">→</div>
+      <div style="background:#111; border-radius:12px; padding:16px 12px; text-align:center; width:110px;">
+        <div style="font-size:24px;">🏆</div>
+        <div style="color:#a855f7; font-size:11px; font-weight:600; margin-top:6px;">Earn Rewards</div>
+        <div style="color:#666; font-size:10px; margin-top:2px;">Weekly payouts</div>
+      </div>
+    </div>
+    <p style="color:#555; font-size:11px; margin:20px 0 0; text-align:center;">tcgarena.fun — Built on Monad</p>
+  </div>
+
+  <!-- Graphic 5: Rarity Tiers -->
+  <h3 style="color:#00ff88; margin-bottom:16px;">5. Rarity Tiers Card</h3>
+  <div style="width:100%; max-width:600px; margin:0 auto 48px; aspect-ratio:1200/675; background:#0a0a0a; border:2px solid #222; border-radius:16px; padding:36px; display:flex; flex-direction:column; justify-content:center; position:relative; overflow:hidden;">
+    <h3 style="color:#fff; font-size:22px; margin:0 0 20px; font-family:'Space Grotesk',sans-serif; text-align:center;">Card Rarity Tiers</h3>
+    <div style="display:flex; flex-direction:column; gap:8px; max-width:400px; margin:0 auto; width:100%;">
+      <div style="display:flex; align-items:center; gap:12px; background:#111; border-radius:8px; padding:10px 16px; border-left:3px solid #888;">
+        <span style="color:#888; font-weight:700; width:80px;">Common</span>
+        <div style="flex:1; background:#222; border-radius:4px; height:8px;"><div style="width:60%; background:#888; height:100%; border-radius:4px;"></div></div>
+        <span style="color:#666; font-size:12px;">60%</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:12px; background:#111; border-radius:8px; padding:10px 16px; border-left:3px solid #3b82f6;">
+        <span style="color:#3b82f6; font-weight:700; width:80px;">Rare</span>
+        <div style="flex:1; background:#222; border-radius:4px; height:8px;"><div style="width:25%; background:#3b82f6; height:100%; border-radius:4px;"></div></div>
+        <span style="color:#666; font-size:12px;">25%</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:12px; background:#111; border-radius:8px; padding:10px 16px; border-left:3px solid #a855f7;">
+        <span style="color:#a855f7; font-weight:700; width:80px;">Epic</span>
+        <div style="flex:1; background:#222; border-radius:4px; height:8px;"><div style="width:12%; background:#a855f7; height:100%; border-radius:4px;"></div></div>
+        <span style="color:#666; font-size:12px;">12%</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:12px; background:#111; border-radius:8px; padding:10px 16px; border-left:3px solid #ffd700;">
+        <span style="color:#ffd700; font-weight:700; width:80px;">Legendary</span>
+        <div style="flex:1; background:#222; border-radius:4px; height:8px;"><div style="width:3%; background:#ffd700; height:100%; border-radius:4px;"></div></div>
+        <span style="color:#666; font-size:12px;">2.5%</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:12px; background:#111; border-radius:8px; padding:10px 16px; border-left:3px solid #ff0040;">
+        <span style="color:#ff0040; font-weight:700; width:80px;">Mythic</span>
+        <div style="flex:1; background:#222; border-radius:4px; height:8px;"><div style="width:1%; background:#ff0040; height:100%; border-radius:4px;"></div></div>
+        <span style="color:#666; font-size:12px;">0.5%</span>
+      </div>
+    </div>
+    <p style="color:#555; font-size:11px; margin:16px 0 0; text-align:center;">PSA-style grading · Higher rarity = higher rewards</p>
+  </div>
+
+  <!-- Graphic 6: CTA / Launch Card -->
+  <h3 style="color:#00ff88; margin-bottom:16px;">6. Call-to-Action Card</h3>
+  <div style="width:100%; max-width:600px; margin:0 auto 48px; aspect-ratio:1200/675; background:linear-gradient(135deg, #0a0a0a, #0d1a12); border:2px solid #00ff88; border-radius:16px; padding:40px; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; position:relative; overflow:hidden;">
+    <div style="position:absolute; inset:0; background:radial-gradient(ellipse at center, rgba(0,255,136,0.05) 0%, transparent 70%);"></div>
+    <div style="font-size:40px; margin-bottom:16px;">🃏⚔️🔥</div>
+    <h2 style="color:#fff; font-size:28px; margin:0 0 12px; font-family:'Space Grotesk',sans-serif;">Your Cards. Your NFTs. Your Rewards.</h2>
+    <p style="color:#999; font-size:14px; margin:0 0 24px; max-width:400px;">Open packs, collect rare AI-generated cards, battle in the arena, and earn weekly $TCG rewards.</p>
+    <div style="background:#00ff88; color:#000; font-weight:700; padding:12px 32px; border-radius:8px; font-size:16px;">Play Now → tcgarena.fun</div>
+    <p style="color:#555; font-size:11px; margin:16px 0 0;">Built on Monad · Deflationary by design</p>
+  </div>
+
+  <p style="color:#666; text-align:center; font-size:13px; margin-top:16px;">💡 <strong>Tip:</strong> Screenshot any card above at 2x zoom for optimal Twitter/X image quality (1200×675px).</p>
+</section>
+
+<!-- BLANK BACKGROUNDS SECTION -->
+<section class="section" id="backgrounds">
+  <h2 class="section-title">🖼️ Blank Backgrounds</h2>
+  <p style="color:#999; margin-bottom:32px; text-align:center;">Screenshot these and use as backgrounds for your own social media graphics. 1200×675 (Twitter) and 1080×1080 (Instagram).</p>
+
+  <h3 style="color:#00ff88; margin-bottom:16px;">Twitter/X (1200×675)</h3>
+
+  <!-- BG 1: Grid + glow -->
+  <p style="color:#888; font-size:13px; margin-bottom:8px;">Grid + Green Glow</p>
+  <div style="width:100%; max-width:600px; margin:0 auto 32px; aspect-ratio:1200/675; background:#0a0a0a; border-radius:16px; position:relative; overflow:hidden;">
+    <div style="position:absolute; inset:0; background-image:linear-gradient(rgba(0,255,136,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(0,255,136,0.07) 1px, transparent 1px); background-size:60px 60px;"></div>
+    <div style="position:absolute; inset:0; background:radial-gradient(ellipse at 30% 50%, rgba(0,255,136,0.08) 0%, transparent 60%), radial-gradient(ellipse at 70% 30%, rgba(255,215,0,0.05) 0%, transparent 50%);"></div>
+  </div>
+
+  <!-- BG 2: Grid + border accent -->
+  <p style="color:#888; font-size:13px; margin-bottom:8px;">Grid + Green Border</p>
+  <div style="width:100%; max-width:600px; margin:0 auto 32px; aspect-ratio:1200/675; background:#0a0a0a; border:2px solid #00ff88; border-radius:16px; position:relative; overflow:hidden;">
+    <div style="position:absolute; inset:0; background-image:linear-gradient(rgba(0,255,136,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(0,255,136,0.07) 1px, transparent 1px); background-size:60px 60px;"></div>
+    <div style="position:absolute; top:-100px; right:-100px; width:300px; height:300px; background:radial-gradient(circle, rgba(0,255,136,0.1) 0%, transparent 70%);"></div>
+    <div style="position:absolute; bottom:-100px; left:-100px; width:300px; height:300px; background:radial-gradient(circle, rgba(255,215,0,0.06) 0%, transparent 70%);"></div>
+  </div>
+
+  <!-- BG 3: Dark gradient, no grid -->
+  <p style="color:#888; font-size:13px; margin-bottom:8px;">Dark Gradient (no grid)</p>
+  <div style="width:100%; max-width:600px; margin:0 auto 32px; aspect-ratio:1200/675; background:linear-gradient(135deg, #0a0a0a 0%, #0d1a12 50%, #0a0a0a 100%); border-radius:16px; position:relative; overflow:hidden;">
+    <div style="position:absolute; inset:0; background:radial-gradient(ellipse at center, rgba(0,255,136,0.04) 0%, transparent 70%);"></div>
+  </div>
+
+  <!-- BG 4: Rainbow top bar + grid -->
+  <p style="color:#888; font-size:13px; margin-bottom:8px;">Rainbow Bar + Grid</p>
+  <div style="width:100%; max-width:600px; margin:0 auto 32px; aspect-ratio:1200/675; background:#0a0a0a; border:2px solid #222; border-radius:16px; position:relative; overflow:hidden;">
+    <div style="position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg, #00ff88, #ffd700, #ff0040);"></div>
+    <div style="position:absolute; inset:0; background-image:linear-gradient(rgba(0,255,136,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(0,255,136,0.07) 1px, transparent 1px); background-size:60px 60px;"></div>
+  </div>
+
+  <h3 style="color:#00ff88; margin-bottom:16px; margin-top:40px;">Instagram (1080×1080)</h3>
+
+  <!-- BG 5: Square grid -->
+  <p style="color:#888; font-size:13px; margin-bottom:8px;">Grid + Glow (Square)</p>
+  <div style="width:100%; max-width:500px; margin:0 auto 32px; aspect-ratio:1/1; background:#0a0a0a; border-radius:16px; position:relative; overflow:hidden;">
+    <div style="position:absolute; inset:0; background-image:linear-gradient(rgba(0,255,136,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(0,255,136,0.07) 1px, transparent 1px); background-size:60px 60px;"></div>
+    <div style="position:absolute; inset:0; background:radial-gradient(ellipse at 50% 50%, rgba(0,255,136,0.08) 0%, transparent 60%);"></div>
+  </div>
+
+  <!-- BG 6: Square border -->
+  <p style="color:#888; font-size:13px; margin-bottom:8px;">Green Border (Square)</p>
+  <div style="width:100%; max-width:500px; margin:0 auto 32px; aspect-ratio:1/1; background:#0a0a0a; border:2px solid #00ff88; border-radius:16px; position:relative; overflow:hidden;">
+    <div style="position:absolute; inset:0; background-image:linear-gradient(rgba(0,255,136,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(0,255,136,0.07) 1px, transparent 1px); background-size:60px 60px;"></div>
+    <div style="position:absolute; top:-80px; left:-80px; width:250px; height:250px; background:radial-gradient(circle, rgba(0,255,136,0.1) 0%, transparent 70%);"></div>
+    <div style="position:absolute; bottom:-80px; right:-80px; width:250px; height:250px; background:radial-gradient(circle, rgba(255,0,64,0.06) 0%, transparent 70%);"></div>
+  </div>
+</section>
+
+</div>
+
+<div class="footer">
+  <p><strong>TCG Arena</strong> — Branding Kit · February 2026</p>
+  <p style="margin-top:8px;">Contact the TCG Arena team for logos, assets, and integration inquiries.</p>
+</div>
+
+</body>
+</html>
